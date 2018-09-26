@@ -74,7 +74,6 @@ def adjustSystem(temp, humidity, state):
 if __name__ == "__main__":
   args    = parser.parse_args()
   history = {}
-  sense   = SenseHat()
 
   # Make this repeatable
   random.seed(args.seed) 
