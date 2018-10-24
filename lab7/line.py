@@ -5,8 +5,6 @@ import matplotlib
 matplotlib.use('Agg')  # necessary since we're headless
 import matplotlib.pyplot as plt
 
-print("Hello CSI3660 you get to go home early today because I just talked and talked adnt alked and he's still talking.")
-
 ## super-basic line plotting
 xvals = np.arange(-2, 1, 0.01) # Setup our x-values
 yvals = np.cos(xvals)            # Setup our y-values
