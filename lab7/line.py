@@ -12,8 +12,8 @@ plt.plot(xvals, yvals)           # Plot a basic X-Y plot
 #plt.show()                      # If this were a program with a display, this would show the fig
 plt.savefig('plots/sine-plot.png') # Save the figure to PNG (you can use other formats by changing extension)
 
-print "sine-plot.png generated!"
-raw_input('[1/3] Press enter to continue to the next step')
+print("sine-plot.png generated!")
+input('[1/3] Press enter to continue to the next step')
 
 ## using a quadratic function and annotating a previous figure
 newyvals = 1 - 0.5 * xvals**2     # Evaluate quadratic approximation on xvals
@@ -24,8 +24,8 @@ plt.xlabel('Input')
 plt.ylabel('Function values')
 plt.savefig('plots/quad-plot.png') 
 
-print "quad-plot.png generated!"
-raw_input('[2/3] Press enter to continue to the next step')
+print("quad-plot.png generated!")
+input('[2/3] Press enter to continue to the next step')
 
 ## generating a contour plot
 plt.figure()                         # Create a new figure (otherwise it'd keep drawing on the old one!)
@@ -37,5 +37,5 @@ Z     = np.sqrt(X**2 + Y**2)         # Compute function values on grid
 plt.contour(X, Y, Z, [0.5, 1.0, 1.2, 1.5], colors='k', linestyles='solid')
 plt.savefig('plots/contour-plot.png')
 
-print "contour-plot.png generated!"
-print "[3/3] Done."
+print("contour-plot.png generated!")
+print("[3/3] Done.")

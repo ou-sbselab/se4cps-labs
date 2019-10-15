@@ -1,5 +1,5 @@
 """
-CSCI4900/5900: Lab 3
+CSI4900/5900: Lab 7
 
 This program simulates a very basic HVAC system that implements limited
 requirements monitoring.  The intention will be to extend this (or use it
@@ -125,7 +125,7 @@ def graph_requirements(history, timesteps):
   for req in reqs:
     yvals[req] = np.arange(timesteps).astype(np.double)
 
-  for timestep in xrange(timesteps):
+  for timestep in range(timesteps):
     for req in reqs:
       if req in history[timestep]['utils'].keys():
         yvals[req][timestep] = history[timestep]['utils'][req]
@@ -170,18 +170,18 @@ if __name__ == "__main__":
   state['AC']         = False
   state['humidifier'] = False
 
-  for timestep in xrange(args.timesteps):
+  for timestep in range(args.timesteps):
     curr_temp     = getTemperature(curr_temp)
     curr_humidity = getHumidity(curr_humidity)
 
-    print "T [%f] H [%f] F [%s] AC [%s] H [%s]" % (curr_temp, curr_humidity, state['furnace'], state['AC'], state['humidifier'])
+    print("T [%f] H [%f] F [%s] AC [%s] H [%s]" % (curr_temp, curr_humidity, state['furnace'], state['AC'], state['humidifier']))
 
     curr_temp, curr_humidity, state = adjustSystem(curr_temp, curr_humidity, state)
 
     utils = monitorRequirements(curr_temp, curr_humidity, state)
 
-    print utils
-    print ""
+    print(utils)
+    print("")
 
     history[timestep] = {'temperature': curr_temp,           \
                          'humidity'   : curr_humidity,       \
@@ -195,7 +195,7 @@ if __name__ == "__main__":
 
 with open('HVAC_history.txt','w') as f:
   f.write('timestep  temperature  humidity  sFurnace  sAC  sHumidifier req\n')
-  for timestep in xrange(args.timesteps):
+  for timestep in range(args.timesteps):
     f.write('%d, %f, %f, %s, %s, %s, %s\n' % (timestep, \
                                                     history[timestep]['temperature'], \
                                                     history[timestep]['humidity'], \

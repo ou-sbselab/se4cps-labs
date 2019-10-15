@@ -19,8 +19,8 @@ ax.plot(x, y, z, label='parametric curve')
 ax.legend()
 
 plt.savefig('plots/3d-line-plot.png')
-print "3d-line-plot.png generated!"
-raw_input('[1/3] Press enter to continue to the next step')
+print("3d-line-plot.png generated!")
+input('[1/3] Press enter to continue to the next step')
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
@@ -32,8 +32,8 @@ X, Y, Z = axes3d.get_test_data(0.05)
 ax.plot_wireframe(X, Y, Z, rstride=10, cstride=10)
 
 plt.savefig('plots/3d-wireframe-plot.png')
-print "3d-wireframe-plot.png generated!"
-raw_input('[2/3] Press enter to continue to the next step')
+print("3d-wireframe-plot.png generated!")
+input('[2/3] Press enter to continue to the next step')
 
 n_radii = 8
 n_angles = 36
@@ -60,5 +60,5 @@ ax = fig.gca(projection='3d')
 ax.plot_trisurf(x, y, z, linewidth=0.2, antialiased=True)
 
 plt.savefig('plots/3d-triangular-plot.png')
-print "3d-triangular-plot.png generated!"
-print '[3/3] Done.'
+print("3d-triangular-plot.png generated!")
+print('[3/3] Done.')

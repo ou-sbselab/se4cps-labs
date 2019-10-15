@@ -20,8 +20,8 @@ plt.ylabel('Usage')
 plt.title('Programming language usage')
  
 plt.savefig('plots/barcharts-plot.png')
-print "barcharts-plot.png generated!"
-raw_input('[1/4] Press enter to continue to the next step')
+print("barcharts-plot.png generated!")
+input('[1/4] Press enter to continue to the next step')
 
 ## boxplots
 
@@ -35,15 +35,15 @@ data = np.concatenate((spread, center, flier_high, flier_low), 0)
 # basic plot
 plt.boxplot(data)
 plt.savefig('plots/boxplot-1-plot.png')
-print "boxplot-1-plot.png generated!"
-raw_input('[2/4] Press enter to continue to the next step')
+print("boxplot-1-plot.png generated!")
+input('[2/4] Press enter to continue to the next step')
 
 # horizontal boxes
 plt.figure()
 plt.boxplot(data, 0, 'rs', 0)
 plt.savefig('plots/boxplot-2-plot.png')
-print "boxplot-2-plot.png generated!"
-raw_input('[3/4] Press enter to continue to the next step')
+print("boxplot-2-plot.png generated!")
+input('[3/4] Press enter to continue to the next step')
 
 # fake up some more data
 spread = np.random.rand(50) * 100
@@ -64,5 +64,5 @@ plt.figure()
 plt.boxplot(data)
 
 plt.savefig('plots/boxplot-3-plot.png')
-print "boxplot-3-plot.png generated!"
-print '[4/4] Done.'
+print("boxplot-3-plot.png generated!")
+print('[4/4] Done.')
