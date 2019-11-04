@@ -21,7 +21,7 @@ class Genome(object):
     self.__genome  = []
     self.__fitness = 0.0
     self.__maxval  = 1000
-    for i in xrange(genome_length):
+    for i in range(genome_length):
       self.__genome.append(random.randint(0,self.__maxval))
 
   def Mutate(self):
@@ -60,7 +60,7 @@ class GA(object):
     self.__num_mutate      = int(population_size * mutation_rate)
 
 
-    self.__population = [Genome(self.__genome_length) for i in xrange(self.__population_size)]
+    self.__population = [Genome(self.__genome_length) for i in range(self.__population_size)]
 
   # Evaluate each individual in the population
   def EvaluatePopulation(self):
@@ -84,7 +84,7 @@ class GA(object):
   def selectRandomIndividual(self):
     K = 3  # tournament size
     winner = self.__population[random.randint(0,len(self.__population)-1)]
-    for i in xrange(1, K):
+    for i in range(1, K):
       challenger = self.__population[random.randint(0,len(self.__population)-1)]
       if (challenger.getFitness() > winner.getFitness()):
         winner = challenger
@@ -107,7 +107,7 @@ class GA(object):
     child_genome_2 = []
 
     # Split up the genome
-    for i in xrange(len(genome_1)):
+    for i in range(len(genome_1)):
 
       if (i < index): # Copy directly up to the cut point 
         child_genome_1.append(genome_1[i])
@@ -129,7 +129,7 @@ class GA(object):
     # Selection is embedded in each operation
     
     # Crossover
-    for i in xrange(self.__num_crossover):
+    for i in range(self.__num_crossover):
       # Perform parent selection
       parent_1 = self.selectRandomIndividual()
       parent_2 = self.selectRandomIndividual()
@@ -140,7 +140,7 @@ class GA(object):
       new_population.append(offspring[1])
 
     # Mutation
-    for i in xrange(self.__num_mutate):
+    for i in range(self.__num_mutate):
       # Perform mutant selection
       individual = self.selectRandomIndividual()
       # Create a copy to mutate
@@ -156,14 +156,14 @@ class GA(object):
     return new_population # Return the next generation
 
   def Execute(self):
-    for i in xrange(self.__num_generations):
+    for i in range(self.__num_generations):
    
       self.EvaluatePopulation()
       self.__population = self.performEvolutionaryOperations()
 
       # Sort population based on fitness
       self.__population.sort(key=lambda x: x.getFitness(), reverse=True)
-      print "Generation: %d, Best: Fitness [%f], Indv %s" % (i, self.__population[0].getFitness(), self.__population[0].getGenome())
+      print("Generation: %d, Best: Fitness [%f], Indv %s" % (i, self.__population[0].getFitness(), self.__population[0].getGenome()))
 
       # Cull the herd if we have too many (already sorted)
       self.__population = self.__population[:self.__population_size]
@@ -175,11 +175,11 @@ class GA(object):
     self.__population.sort(key=lambda x: x.getFitness(), reverse=True)
 
     # Output the best genome and its fitness
-    print "############################"
-    print "Best individual: %s" % str(self.__population[0].getGenome())
-    print "Sum: [%d], Target: [%d]" % (sum(self.__population[0].getGenome()), self.__target)
-    print "Fitness: [%f]" % self.__population[0].getFitness()
-    print "############################"
+    print("############################")
+    print("Best individual: %s" % str(self.__population[0].getGenome()))
+    print("Sum: [%d], Target: [%d]" % (sum(self.__population[0].getGenome()), self.__target))
+    print("Fitness: [%f]" % self.__population[0].getFitness())
+    print("############################")
    
   
 # Main function     
